@@ -45,8 +45,19 @@ const Index = () => {
             >
               Контакты
             </a>
-            <Button className="bg-red-500 hover:bg-red-600">
-              Начать обучение
+            <div className="hidden md:flex items-center gap-2">
+              <Icon name="Phone" className="text-red-500" size={18} />
+              <span className="font-medium">+7 (900) 123-45-67</span>
+            </div>
+            <Button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="bg-red-500 hover:bg-red-600"
+            >
+              Связаться
             </Button>
           </div>
         </div>
@@ -64,7 +75,7 @@ const Index = () => {
               Всего 5000 руб за полный курс с надёжными посредниками и
               поддержкой 24/7
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button className="bg-red-500 hover:bg-red-600 text-lg px-8 py-6">
                 Начать обучение
               </Button>
@@ -74,6 +85,13 @@ const Index = () => {
               >
                 Узнать подробнее
               </Button>
+            </div>
+            <div className="flex items-center gap-3 text-white">
+              <Icon name="Phone" className="text-red-400" size={20} />
+              <span className="text-lg">
+                Звоните:{" "}
+                <span className="font-semibold">+7 (900) 123-45-67</span>
+              </span>
             </div>
           </div>
         </div>
@@ -216,7 +234,7 @@ const Index = () => {
                   <h3 className="text-xl font-bold mb-2">Безопасные платежи</h3>
                   <p className="text-slate-600">
                     Изучите методы безопасной оплаты и перевода средств
-                    китайским партнерам
+                    китайским партнёрам
                   </p>
                 </div>
               </div>
@@ -442,7 +460,7 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12">
             Остались вопросы?
           </h2>
-          <div className="max-w-lg mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card>
               <CardHeader>
                 <CardTitle>Свяжитесь с нами</CardTitle>
@@ -491,6 +509,61 @@ const Index = () => {
                 <Button className="w-full bg-[#1A1F2C]">Отправить</Button>
               </CardFooter>
             </Card>
+
+            <div className="flex flex-col justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold mb-4">Наши контакты</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-red-100 p-2 rounded-full">
+                      <Icon name="Phone" className="text-red-500" size={24} />
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500">Телефон:</div>
+                      <div className="font-medium text-lg">
+                        +7 (900) 123-45-67
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="bg-red-100 p-2 rounded-full">
+                      <Icon name="Mail" className="text-red-500" size={24} />
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500">Email:</div>
+                      <div className="font-medium">info@chinatrade.ru</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="bg-red-100 p-2 rounded-full">
+                      <Icon
+                        name="MessageCircle"
+                        className="text-red-500"
+                        size={24}
+                      />
+                    </div>
+                    <div>
+                      <div className="text-sm text-slate-500">Мессенджеры:</div>
+                      <div className="font-medium">
+                        Telegram, WhatsApp, WeChat
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6">
+                  <Button
+                    className="w-full bg-red-500 hover:bg-red-600 flex items-center justify-center gap-2 py-6"
+                    onClick={() => (window.location.href = "tel:+79001234567")}
+                  >
+                    <Icon name="Phone" size={20} />
+                    Позвонить сейчас
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -502,22 +575,31 @@ const Index = () => {
             <div className="font-bold text-2xl mb-4 md:mb-0">
               <span className="text-red-500">China</span>Trade
             </div>
-            <div className="flex gap-6">
-              <a href="#about" className="hover:text-red-400 transition-colors">
-                О курсе
-              </a>
-              <a
-                href="#program"
-                className="hover:text-red-400 transition-colors"
-              >
-                Программа
-              </a>
-              <a
-                href="#contact"
-                className="hover:text-red-400 transition-colors"
-              >
-                Контакты
-              </a>
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <div className="flex gap-6">
+                <a
+                  href="#about"
+                  className="hover:text-red-400 transition-colors"
+                >
+                  О курсе
+                </a>
+                <a
+                  href="#program"
+                  className="hover:text-red-400 transition-colors"
+                >
+                  Программа
+                </a>
+                <a
+                  href="#contact"
+                  className="hover:text-red-400 transition-colors"
+                >
+                  Контакты
+                </a>
+              </div>
+              <div className="flex items-center gap-2 mt-4 md:mt-0 md:ml-6">
+                <Icon name="Phone" className="text-red-400" size={18} />
+                <span>+7 (900) 123-45-67</span>
+              </div>
             </div>
           </div>
           <Separator className="bg-slate-700 mb-8" />
